@@ -27,6 +27,13 @@
             >Check Stock
             </Link
             >
+            <Link
+                :href="route('logout')"
+                method="post"
+                class="text-dark text-sm uppercase hidden lg:inline-block font-semibold"
+            >Logout
+            </Link
+            >
         </div>
         <div>
             <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
@@ -45,6 +52,9 @@ import {Link} from "@inertiajs/vue3";
 defineProps({
     canLogin: {
         type: Boolean,
+    },
+    canLogout: {
+       type: Boolean,
     },
     canRegister: {
         type: Boolean,

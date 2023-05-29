@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\AddProductController;
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,7 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'canLogout' => Route::has('logout'),
         'addProduct' => Route::has('addProduct'),
         'stock' => Route::has('stock'),
         'laravelVersion' => Application::VERSION,
@@ -35,6 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('addProduct', [AddProductController::class, 'create'])
+        ->name('addProduct');
+    Route::get('stock', [StockController::class, 'create'])
+        ->name('stock');
 });
 
 require __DIR__.'/auth.php';
