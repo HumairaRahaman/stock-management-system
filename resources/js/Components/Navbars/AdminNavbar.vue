@@ -1,37 +1,60 @@
 <template>
   <!-- Navbar -->
   <nav
-    class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
+    class="absolute bg-cyan-200 rounded-bl-lg shadow rounded-br-lg bg-opacity-25 top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
   >
     <div
       class="w-full mx-autp items-start flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
     >
 <!--        v-if="$page.props.auth.user"-->
       <!-- Brand -->
-        <div class="flex justify-between basis-[20%] ">
+        <div class="flex  space-x-4 basis-[45%] ">
             <Link
+                v-if="$page.props.auth.user"
                 :href="route('dashboard')"
-                class="text-dark text-sm uppercase hidden lg:inline-block font-semibold"
+                class="text-sky-800 hover:text-white ease-in-out hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Dashboard
             </Link
             >
             <Link
+                v-if="$page.props.auth.user"
                 :href="route('addProduct')"
-                class="text-dark text-sm uppercase hidden lg:inline-block font-semibold"
+                class="text-sky-800 hover:text-white ease-in-out hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Add Product
             </Link
             >
             <Link
+                v-if="$page.props.auth.user"
                 :href="route('stock')"
-                class="text-dark text-sm uppercase hidden lg:inline-block font-semibold"
+                class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Check Stock
+            </Link
+            >
+            <Link
+                v-if="$page.props.auth.user"
+                :href="route('logout')"
+                method="post"
+                class="text-white  bg-sky-300 px-2 py-2 rounded shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+            >Logout
+            </Link
+            >
+            <Link
+                :href="route('login')"
+
+                class="text-white  bg-sky-300 px-2 py-2 rounded shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+            >Login
+            </Link
+            >
+            <Link
+                :href="route('register')"
+
+                class="text-white  bg-sky-300 px-2 py-2 rounded shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+            >Register
             </Link
             >
         </div>
         <div>
-            <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-                <user-dropdown />
-            </ul>
+           <h2 class="text-indigo-600 text-xl font-semibold ">Stock Management</h2>
         </div>
 
     </div>
@@ -45,6 +68,9 @@ import {Link} from "@inertiajs/vue3";
 defineProps({
     canLogin: {
         type: Boolean,
+    },
+    canLogout: {
+       type: Boolean,
     },
     canRegister: {
         type: Boolean,

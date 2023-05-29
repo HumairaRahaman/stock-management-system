@@ -36,10 +36,7 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
 
-    Route::get('addProduct', [AddProductController::class, 'create'])
-                ->name('addProduct');
-    Route::get('stock', [StockController::class, 'create'])
-        ->name('stock');
+
 });
 
 Route::middleware('auth')->group(function () {
