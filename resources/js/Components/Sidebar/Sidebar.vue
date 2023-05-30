@@ -86,7 +86,7 @@
             <li class="items-center">
                 <Link
                     v-if="$page.props.auth.user"
-                    :href="route('category')"
+                    :href="route('product-types')"
                 >
                     <a
                         class=" text-lime-600 text-md font-semibold"
@@ -98,7 +98,7 @@
           <li class="items-center">
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('product')"
+                :href="route('products')"
             >
               <a
                   class=" text-sky-600 text-md font-semibold"

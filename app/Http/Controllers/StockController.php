@@ -17,6 +17,7 @@ class StockController extends Controller
     {
         return Inertia::render('Stock/Stock');
     }
+
     /**
      * Display the user's profile form.
      */

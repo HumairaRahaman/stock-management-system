@@ -5,7 +5,9 @@ import Navbar from "@/Components/Navbars/AdminNavbar.vue";
 import Table from "@/Components/Cards/CategoryTable.vue";
 
 
-
+const props = defineProps({
+  product_types: {},
+});
 
 
 
@@ -15,6 +17,6 @@ import Table from "@/Components/Cards/CategoryTable.vue";
     <Head title="Category"/>
     <div class="container mx-auto px-4 h-full">
         <Navbar></Navbar>
-        <Table></Table>
+        <Table :product_types="product_types"></Table>
     </div>
 </template>

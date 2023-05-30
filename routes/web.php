@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\AddProductController;
-use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +24,9 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'canLogout' => Route::has('logout'),
         'addProduct' => Route::has('addProduct'),
-        'product' => Route::has('product'),
+        'products' => Route::has('products'),
         'stock' => Route::has('stock'),
-        'category' => Route::has('category'),
+        'product-types' => Route::has('product-types'),
         'addCategory' => Route::has('addCategory'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
@@ -43,15 +41,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('addProduct', [AddProductController::class, 'create'])
+
+    Route::get('addProduct', [ProductController::class, 'create'])
         ->name('addProduct');
-    Route::get('product', [AddProductController::class, 'index'])
-        ->name('product');
-    Route::get('stock', [StockController::class, 'create'])
+    Route::get('products', [ProductController::class, 'index'])
+        ->name('products');
+
+    Route::get('stock', [ProductTypeController::class, 'create'])
         ->name('stock');
-    Route::get('category', [CategoryController::class, 'index'])
-        ->name('category');
-    Route::get('addCategory', [CategoryController::class, 'create'])
+
+    Route::get('product-types', [ProductTypeController::class, 'index'])
+        ->name('product-types');
+    Route::get('addCategory', [ProductTypeController::class, 'create'])
         ->name('addCategory');
 });
 

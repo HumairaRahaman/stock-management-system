@@ -18,14 +18,14 @@
             >
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('product')"
+                :href="route('products')"
                 class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Products
             </Link
             >
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('category')"
+                :href="route('product-types')"
                 class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Category
             </Link

@@ -13,13 +13,16 @@ use Inertia\Response;
 
 class CategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return Inertia::render('Category/Category');
     }
+
     public function create(): Response
     {
         return Inertia::render('Category/AddCategory');
     }
+
     /**
      * Display the user's profile form.
      */
