@@ -50,7 +50,7 @@ console.log('hi');
     <Head title="Add-Product"/>
     <div class="container mx-auto px-4 h-full">
         <Navbar></Navbar>
-        <div class="flex content-center items-center mt-6 justify-center h-full">
+        <div class="flex content-center items-center mt-24 justify-center h-full ">
             <div class="w-full lg:w-full px-4">
                 <div
                     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"
@@ -88,15 +88,14 @@ console.log('hi');
                                             class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                             htmlFor="grid-password"
                                         >
-                                            Product Item
+                                            Name
                                         </label>
-                                        <select v-model="product_type" @change="changeProductItem()"
-                                                class="w-full text-dark font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-white border border-emerald-600  ease-linear transition-all duration-150">
-                                            <option value="0">Product type</option>
-                                            <option v-for="item in productTypeList" :key="item.item" :value="item.item">
-                                                {{ item?.item }}
-                                            </option>
-                                        </select>
+                                        <input
+                                            v-model="item.add_quantity"
+                                            type="text"
+                                            class=" px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring-emerald-600 border border-emerald-600 w-full ease-linear transition-all duration-150"
+                                            placeholder="name"
+                                        />
                                     </div>
 
                                     <div class="relative w-full mb-3">
@@ -118,13 +117,13 @@ console.log('hi');
                                             class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                             htmlFor="grid-password"
                                         >
-                                            Quantity
+                                            Price
                                         </label>
                                         <input
                                             v-model="item.quantity"
                                             type="number"
                                             class=" px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring-emerald-600 border border-emerald-600 w-full ease-linear transition-all duration-150"
-                                            placeholder="Quantity"
+                                            placeholder="Price"
                                         />
                                     </div>
 

@@ -49,7 +49,7 @@ const submit = () =>{
     <Head title=" Product-Inventory"/>
     <div class="container   mx-auto px-4 h-full">
         <Navbar></Navbar>
-        <div class="flex content-center items-center mt-6 justify-center h-full">
+        <div class="flex content-center items-center mt-24 justify-center h-full">
             <div class="w-full lg:w-full px-4">
                 <div
                     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"

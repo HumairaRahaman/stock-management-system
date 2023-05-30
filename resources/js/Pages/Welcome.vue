@@ -32,7 +32,8 @@ defineProps({
 <template>
     <Head title="Welcome"/>
     <div>
-<navbar></navbar>
+<Navbar></Navbar>
+    </div>
 <!--        <div-->
 <!--            class="relative md:ml-64 bg-blueGray-100"-->
 <!--        >-->
@@ -72,30 +73,38 @@ defineProps({
 <!--                    >Check Stock-->
 <!--                    </Link-->
 <!--                    >-->
+<!--                    <Link-->
+<!--                        v-if="$page.props.auth.user"-->
+<!--                        :href="route('logout')"-->
+<!--                        methods="post"-->
+<!--                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"-->
+<!--                    >Logout-->
+<!--                    </Link-->
+<!--                    >-->
 <!--                </template>-->
 <!--            </div>-->
 <!--&lt;!&ndash;            <Footer></Footer>&ndash;&gt;-->
 
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="flex flex-wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <card-line-chart />&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w-full xl:w-4/12 px-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <card-bar-chart />&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="flex flex-wrap mt-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <card-page-visits />&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w-full xl:w-4/12 px-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <card-social-traffic />&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
 <!--        </div>-->
-        <div>
-            <div class="flex flex-wrap">
-                <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                    <card-line-chart />
-                </div>
-                <div class="w-full xl:w-4/12 px-4">
-                    <card-bar-chart />
-                </div>
-            </div>
-            <div class="flex flex-wrap mt-4">
-                <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                    <card-page-visits />
-                </div>
-                <div class="w-full xl:w-4/12 px-4">
-                    <card-social-traffic />
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    </div>-->
 
 </template>
 
