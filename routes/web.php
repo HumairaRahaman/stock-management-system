@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -27,6 +28,8 @@ Route::get('/', function () {
         'addProduct' => Route::has('addProduct'),
         'product' => Route::has('product'),
         'stock' => Route::has('stock'),
+        'category' => Route::has('category'),
+        'addCategory' => Route::has('addCategory'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
@@ -42,10 +45,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('addProduct', [AddProductController::class, 'create'])
         ->name('addProduct');
-    Route::get('product', [ProductController::class, 'create'])
+    Route::get('product', [AddProductController::class, 'index'])
         ->name('product');
     Route::get('stock', [StockController::class, 'create'])
         ->name('stock');
+    Route::get('category', [CategoryController::class, 'index'])
+        ->name('category');
+    Route::get('addCategory', [CategoryController::class, 'create'])
+        ->name('addCategory');
 });
 
 require __DIR__.'/auth.php';

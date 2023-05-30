@@ -83,6 +83,18 @@
               </a>
             </Link>
           </li>
+            <li class="items-center">
+                <Link
+                    v-if="$page.props.auth.user"
+                    :href="route('category')"
+                >
+                    <a
+                        class=" text-lime-600 text-md font-semibold"
+                    >
+                        Category
+                    </a>
+                </Link>
+            </li>
           <li class="items-center">
             <Link
                 v-if="$page.props.auth.user"
@@ -154,6 +166,12 @@ defineProps({
         type: Boolean,
     },
     product: {
+        type: Boolean,
+    },
+    category: {
+        type: Boolean,
+    },
+    addCategory: {
         type: Boolean,
     },
     laravelVersion: {

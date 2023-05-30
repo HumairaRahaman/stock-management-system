@@ -13,6 +13,9 @@ use Inertia\Response;
 
 class AddProductController extends Controller
 {
+    public function index(){
+        return Inertia::render('Product/Product');
+    }
     public function create(): Response
     {
         return Inertia::render('Product/AddProduct');

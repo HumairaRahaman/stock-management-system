@@ -11,11 +11,14 @@ use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
+    public function index(){
+        return Inertia::render('Category/Category');
+    }
     public function create(): Response
     {
-        return Inertia::render('Product/Product');
+        return Inertia::render('Category/AddCategory');
     }
     /**
      * Display the user's profile form.

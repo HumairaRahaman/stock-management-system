@@ -25,6 +25,13 @@
             >
             <Link
                 v-if="$page.props.auth.user"
+                :href="route('category')"
+                class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+            >Category
+            </Link
+            >
+            <Link
+                v-if="$page.props.auth.user"
                 :href="route('stock')"
                 class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Stock
