@@ -12,22 +12,22 @@
             <Link
                 v-if="$page.props.auth.user"
                 :href="route('dashboard')"
-                class="text-sky-800 hover:text-white ease-in-out hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+                class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Dashboard
             </Link
             >
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('addProduct')"
-                class="text-sky-800 hover:text-white ease-in-out hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
-            >Add Product
+                :href="route('product')"
+                class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
+            >Products
             </Link
             >
             <Link
                 v-if="$page.props.auth.user"
                 :href="route('stock')"
                 class="text-sky-800 hover:text-white  hover:bg-sky-300 hover:px-2 hover:py-2 hover:rounded hover:shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
-            >Check Stock
+            >Stock
             </Link
             >
             <Link
@@ -39,15 +39,15 @@
             </Link
             >
             <Link
+                v-if="!$page.props.auth.user"
                 :href="route('login')"
-
                 class="text-white  bg-sky-300 px-2 py-2 rounded shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Login
             </Link
             >
             <Link
                 :href="route('register')"
-
+                v-if="!$page.props.auth.user"
                 class="text-white  bg-sky-300 px-2 py-2 rounded shadow hover:duration-300 hover:delay-150 transition duration-700 ease-in-out  md:text-md text-sm uppercase hidden lg:inline-block font-semibold"
             >Register
             </Link

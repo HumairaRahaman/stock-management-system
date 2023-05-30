@@ -86,15 +86,27 @@
           <li class="items-center">
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('stock')"
+                :href="route('product')"
             >
               <a
-                  class=" text-indigo-600 text-md font-semibold"
+                  class=" text-sky-600 text-md font-semibold"
               >
-                  Check Stock
+                   Products
               </a>
             </Link>
           </li>
+            <li class="items-center">
+                <Link
+                    v-if="$page.props.auth.user"
+                    :href="route('stock')"
+                >
+                    <a
+                        class=" text-indigo-600 text-md font-semibold"
+                    >
+                        Stock
+                    </a>
+                </Link>
+            </li>
 
 
         </ul>
@@ -139,6 +151,9 @@ defineProps({
         type: Boolean,
     },
     addProduct: {
+        type: Boolean,
+    },
+    product: {
         type: Boolean,
     },
     laravelVersion: {

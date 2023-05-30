@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'canLogout' => Route::has('logout'),
         'addProduct' => Route::has('addProduct'),
+        'product' => Route::has('product'),
         'stock' => Route::has('stock'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
@@ -40,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('addProduct', [AddProductController::class, 'create'])
         ->name('addProduct');
+    Route::get('product', [ProductController::class, 'create'])
+        ->name('product');
     Route::get('stock', [StockController::class, 'create'])
         ->name('stock');
 });

@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import { createPopper } from "@popperjs/core";
+//import { createPopper } from "@popperjs/core";
 
 export default {
   data() {
